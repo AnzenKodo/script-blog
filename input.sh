@@ -13,14 +13,16 @@ fi
 
 # Variable
 
-name="Filly Agioro Blog"
+name="Filly Agioro"
 title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7-)
+website="https://fillyagioro.vercel.app"
+blog="https://fillyblog.vercel.app"
 
 # The main functions
 
 head() {
 	cat <<-_EOF_
-		<title>$name Blog - $title</title>
+		<title>$name Blog</title>
 
 		<!--meta tag-->
 		<meta name="description" content="This is my personal website which shows information about me.">
@@ -43,7 +45,7 @@ footer() {
 	cat <<-_EOF_
 		</article>
 		<footer>
-		<p>@<a href="https://fillyagioro.vercel.app/">$name</a> under <a href="https://github.com/FillyAgioro/script-blog/blob/master/LICENSE">GPL 3.0</a> | <a href="https://github.com/FillyAgioro/script-blog">Website Source</a></p>
+		<p><a href="/rss.xml">RSS</a> | @<a href="$website">$name</a> under <a href="/LICENSE.txt">GPL 3.0</a> | <a href="https://github.com/FillyAgioro/script-blog">Website Source</a></p>
 		</footer>
 		</section>
 	_EOF_
@@ -57,14 +59,14 @@ index() {
 	cat <<-_EOF_
 		<section class="center">
 		<main>
-		<h1>$name</h1>
+		<p class="title">$name Blog</p>
 		</main>
 		<article class="content">
 	_EOF_
 
 	# Main compontent of index.html
 	for i in posts/*.md; do
-		title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7-)
+		title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7- | sed '/^leaf/ s/-/_/' | tr '-' ' ')
 		file_title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.')
 		cat <<-_EOF_
 			<p><a href="/dist/$file_title.html">$title</a></p>
@@ -92,7 +94,7 @@ echo "$(index_main)" >index.html
 
 for i in posts/*.md; do
 
-	title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7-)
+	title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7- | tr '-' ' ')
 	file_title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.')
 	date=$(date -I -r $i)
 
@@ -106,9 +108,9 @@ for i in posts/*.md; do
 
 			<section class="center">
 			<main>
-			<h1>$name</h1>
-			<h2>$title</h2>
-			<p>Published on <time datetime=$date>$date</time></p>
+			<p class="title">$name Blog</p>
+			<p class="title">$title</p>
+			<p>Published on <time>$date</time></p>
 			</main>
 			<article class="content">
 
@@ -127,19 +129,41 @@ done
 # RSS functions
 
 rss() {
-	
-	cat <<- _EOF_
-	<?xml version="1.0" encoding="UTF-8" ?>
-	<rss version="2.0">
 
-	<channel>
-	
-	_EOF_	
+	cat <<-_EOF_
+		<?xml version="1.0" encoding="UTF-8" ?>
+		<rss version="2.0">
+		<channel>
+		<link>$blog</link>
+		<description>My is my Blog where I write about my own world.</description>
+		<language>en-us</language>
+		<copyright>@$name under GPL 3.0</copyright>
+		<author>$name</author>
+		<managingEditor>fillyagioro.perpetuana@slmail.me</managingEditor>
+		<lastBuildDate>$(date)</lastBuildDate>
+	_EOF_
 
 	for i in posts/*.md; do
 
-		
+		title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7- | tr '-' ' ')
+		file_title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.')
+		date=$(date -I -r $i)
 
+		cat <<-_EOF_
+			<item>
+			<title>$title</title>
+			<link>$blog/$file_title</link>
+			<pubDate>$date</pubDate>
+			</item>
+		_EOF_
 	done
 
+	cat <<-_EOF_
+		</channel>
+		</rss>
+	_EOF_
+
+	return
 }
+
+echo "$(rss)">rss.xml

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
-	<channel>
-		<link>http://www.scripting.com/</link>
-		<description>My is my Blog where I write about my own world.</description>
-		<language>en-us</language>
+<channel>
+<link>https://fillyblog.vercel.app</link>
+<description>My is my Blog where I write about my own world.</description>
+<language>en-us</language>
+<copyright>@Filly Agioro under GPL 3.0</copyright>
+<author>Filly Agioro</author>
+<managingEditor>fillyagioro.perpetuana@slmail.me</managingEditor>
+<lastBuildDate>Tue 24 Nov 2020 09:57:59 AM IST</lastBuildDate>
+<item>
+<title>The Game</title>
+<link>https://fillyblog.vercel.app/posts/The-Game</link>
+<pubDate>2020-11-24</pubDate>
+</item>
+<item>
+<title>hi</title>
+<link>https://fillyblog.vercel.app/posts/hi</link>
+<pubDate>2020-11-23</pubDate>
+</item>
+</channel>
+</rss>

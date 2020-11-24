@@ -16,6 +16,11 @@ body {
   line-height: 1.9em;
 }
 
+.title {
+  font-size: 1.5em;
+  color: #00eab5;
+}
+
 .center, footer {
   max-width: 35em;
   border: 2px dashed #00eab5;
