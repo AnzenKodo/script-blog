@@ -14,7 +14,6 @@ fi
 # Variable
 
 name="Filly Agioro"
-title=$(printf '%s\n' "${i%}" | cut -f 1 -d '.' | cut -b 7-)
 website="https://fillyagioro.vercel.app"
 blog="https://fillyblog.vercel.app"
 
@@ -24,13 +23,11 @@ head() {
 	cat <<-_EOF_
 		<title>$name Blog</title>
 
-		<!--meta tag-->
 		<meta name="description" content="This is my personal website which shows information about me.">
 		<meta name="theme-color" content="#00eab5z">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="msapplication-TileColor" content="#2b5797">
 
-		<!-- link tag-->
 		<link rel="apple-touch-icon" sizes="180x180" href="/dist/logo/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/dist/logo/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/dist/logo/favicon-16x16.png" />
@@ -45,7 +42,7 @@ footer() {
 	cat <<-_EOF_
 		</article>
 		<footer>
-		<p><a href="/rss.xml">RSS</a> | @<a href="$website">$name</a> under <a href="/LICENSE.txt">GPL 3.0</a> | <a href="https://github.com/FillyAgioro/script-blog">Website Source</a></p>
+		<p><a href="/rss.xml">RSS</a> | @<a href="$website">Filly Agioro</a> under <a href="/LICENSE.txt">GPL 3.0</a> | <a href="https://github.com/FillyAgioro/script-blog">Website Source</a></p>
 		</footer>
 		</section>
 	_EOF_
@@ -88,7 +85,7 @@ index_main() {
 		</html>
 	_EOF_
 }
-echo "$(index_main)" >index.html
+echo $(index_main) >index.html
 
 # Posts functions
 
@@ -108,9 +105,9 @@ for i in posts/*.md; do
 
 			<section class="center">
 			<main>
-			<p class="title">$name Blog</p>
+			<p class="title"><a href="/">$name Blog</a></p>
 			<p class="title">$title</p>
-			<p>Published on <time>$date</time></p>
+			<p>Published or Updated on <time>$date</time></p>
 			</main>
 			<article class="content">
 
@@ -123,7 +120,7 @@ for i in posts/*.md; do
 		return
 	}
 
-	echo "$(posts_main)" >dist/$file_title.html
+	echo $(posts_main) >dist/$file_title.html
 done
 
 # RSS functions

@@ -82,12 +82,6 @@ Add you photos in [`photos`](photos) folder. Like following code:
 ![Shell-Script](/posts/Shell-Script.md)
 ```
 
-## ❗ Issus
-
-The markdown cli program don't latest markdown syntax support like markdown table, strike-through, and few others.
-
-You have to use real HTML for thous.
-
 ## 🚸 Support
 
 To support this project development please consider [DONATING](https://fillyagioro.vercel.app/#support).

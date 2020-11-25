@@ -40,7 +40,10 @@ a {
 }
 
 img {
-  width: 33em;
+  max-width: 100%;
+  max-height: 15em;
+  margin: auto;
+  display: block;
 }
 
 blockquote {
@@ -60,6 +63,10 @@ pre {
   overflow-x: auto;
   white-space: pre-line;
   padding: 0.5em;
+}
+
+hr {
+  border: 2px dashed #00eab5;
 }
 
 table {

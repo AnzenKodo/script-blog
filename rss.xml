@@ -7,16 +7,21 @@
 <copyright>@Filly Agioro under GPL 3.0</copyright>
 <author>Filly Agioro</author>
 <managingEditor>fillyagioro.perpetuana@slmail.me</managingEditor>
-<lastBuildDate>Tue 24 Nov 2020 09:57:59 AM IST</lastBuildDate>
+<lastBuildDate>Wed 25 Nov 2020 12:24:10 PM IST</lastBuildDate>
 <item>
-<title>The Game</title>
-<link>https://fillyblog.vercel.app/posts/The-Game</link>
-<pubDate>2020-11-24</pubDate>
+<title>Markdown Guide</title>
+<link>https://fillyblog.vercel.app/posts/Markdown-Guide</link>
+<pubDate>2020-11-25</pubDate>
 </item>
 <item>
-<title>hi</title>
-<link>https://fillyblog.vercel.app/posts/hi</link>
-<pubDate>2020-11-23</pubDate>
+<title>Script Blog README</title>
+<link>https://fillyblog.vercel.app/posts/Script-Blog-README</link>
+<pubDate>2020-11-25</pubDate>
+</item>
+<item>
+<title>Shell Script</title>
+<link>https://fillyblog.vercel.app/posts/Shell-Script</link>
+<pubDate>2020-11-25</pubDate>
 </item>
 </channel>
 </rss>
