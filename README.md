@@ -1,6 +1,6 @@
 # Script Blog
 
-![Screenshort](photos/screenshot.png)
+![Screenshort](photos/screenshort.png)
 
 This simple easy to modify shell script site generator which helps you to write blog. This theme is without any kind of JavaScript or any other kind of programming language. This theme only contain HTML, Shell, SCSS, and SCSS files. Easy to understand code and noob friendly. You only have to edit [`scriptblog.sh`](/scriptblog.sh) file and make markdown file in [`posts`](/posts) folder.
 
