@@ -100,7 +100,7 @@ Please read [`CONTRIBUTING`](https://github.com/FillyAgioro/.github/blob/main/CO
 
 ## ✏️ Authors
 
-See also the list of [Contributors]() @all who participated in this project.
+See also the list of [Contributors](https://github.com/FillyAgioro/template/graphs/contributors) who participated in this project.
 
 ## 📄️ License
 
