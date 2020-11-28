@@ -90,6 +90,10 @@ The markdown cli program don't latest markdown syntax support like markdown tabl
 
 You have to use real HTML for thous.
 
+## 🏗️ Built With
+
+- [Fontlibary](https://fontlibrary.org/en/font/dogica) - Fonts
+
 ## 🚸 Support
 
 To support this project development please consider [DONATING](https://fillyagioro.vercel.app/#support).
@@ -100,7 +104,7 @@ Please read [`CONTRIBUTING`](https://github.com/FillyAgioro/.github/blob/main/CO
 
 ## ✏️ Authors
 
-See also the list of [Contributors](https://github.com/FillyAgioro/template/graphs/contributors) who participated in this project.
+See also the list of [Contributors](https://github.com/FillyAgioro/script-blog/graphs/contributors) who participated in this project.
 
 ## 📄️ License
 
